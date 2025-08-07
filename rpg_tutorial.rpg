@@ -1,0 +1,70 @@
+     FMYFILE   IF   E           K DISK    USROPN
+     DNUM1     S              5P 0
+     DNUM2     S              5P 0
+     DRESULT   S              5P 0
+     C                   EVAL      NUM1 = 10
+     C                   EVAL      NUM2 = 20
+     C                   EVAL      RESULT = NUM1 + NUM2
+     C                   DSPLY     RESULT
+
+     C                   EVAL      num1 = 10
+     C                   EVAL      num2 = 20
+     C                   EVAL      result = num1 + num2
+     C                   IF        result > 25
+     C                   DSPLY     'Result is big!'
+     C                   ENDIF
+
+     C                   Z-ADD     1         counter
+     C                   DOW       counter <= 5
+     C                   DSPLY     counter
+     C                   ADD       1         counter
+     C                   ENDDO
+     C                   SETON                                        LR
+
+
+
+#Boxes 1–5	These are for numbering your lines (like line numbers in a book). Usually, you don’t use them now.
+#Box 6	This is for a special mark — like a star (*) if you want to make a comment (a note that the computer ignores).
+#Boxes 7–8	Sometimes extra helpers go here, but usually, you can leave them blank.
+#Boxes 9–11	This is where you put the code action word — like “C” to say “this is a calculation” or “F” to say “this is a file”.
+#Boxes 12+	This is where you write the rest — the actual instructions or names or numbers.
+
+| Indicator | Full Name                       | What it Does                                        |
+| --------- | ------------------------------- | --------------------------------------------------- |
+| **F**     | File Specification              | Defines files (input, output, disk, printer, etc.)  |
+| **D**     | Definition Specification        | Declares variables, constants, data structures      |
+| **C**     | Calculation Specification       | Contains code logic and calculations                |
+| **H**     | Header Specification            | Program-level settings (like debug options, timing) |
+| **I**     | Input Specification             | Rare, used for some input handling                  |
+| **O**     | Output Specification            | Rare, used for output specs                         |
+| **P**     | Procedure Specification         | Defines procedures or subroutines                   |
+| **S**     | Service Program Specification   | Used for service programs                           |
+| **B**     | Built-in Function Specification | For built-in function prototypes                    |
+| **Z**     | Sequence Number Line            | Used for line numbering in older code               |
+
+
+| Operation Code        | What it Does                       | Example                      |
+| --------------------- | ---------------------------------- | ---------------------------- |
+| `EVAL`                | Evaluate expression (math, assign) | `EVAL  result = num1 + num2` |
+| `Z-ADD`               | Zero and add (sets a value)        | `Z-ADD  10  num1`            |
+| `Z-SUB`               | Zero and subtract                  | `Z-SUB  5   num1`            |
+| `ADD`                 | Add value                          | `ADD  10  num1  num1`        |
+| `SUB`                 | Subtract value                     | `SUB  5   num1  num1`        |
+| `MULT`                | Multiply values                    | `MULT num1 num2 result`      |
+| `DIV`                 | Divide                             | `DIV  num1 num2 result`      |
+| `IF`, `ELSE`, `ENDIF` | Conditional logic                  | See example below            |
+| `DO`, `ENDDO`         | Loops                              | See example below            |
+| `DOW`, `ENDDO`        | While loops                        | See example below            |
+| `MOVE`, `MOVEL`       | Move values                        | `MOVE num1 num2`             |
+| `SETON` / `SETOFF`    | Turn on/off indicators             | `SETON LR`                   |
+| `DSPLY`               | Display a value                    | `DSPLY result`               |
+| `CALL`                | Call another program               | `CALL 'MYPGM'`               |
+| `CALLP`               | Call a procedure (modern)          | `CALLP myProcedure()`        |
+| `RETURN`              | Return from a subroutine/procedure | `RETURN`                     |
+
+     C                   EVAL      num1 = 10
+     C                   EVAL      num2 = 20
+     C                   EVAL      result = num1 + num2
+     C                   IF        result > 25
+     C                   DSPLY     'Result is big!'
+     C                   ENDIF
